@@ -68,7 +68,7 @@ foreach ($boards as $i => &$board) {
 	$country = get_country($locale_short);
 	if ($board['uri'] === 'int') {$locale_short = 'eo'; $locale = 'eo'; $country = 'Esperanto';}
 
-	$board['img'] = "<img class=\"flag flag-$locale_short\" src=\"/static/blank.gif\" style=\"width:16px;height:11px;\" alt=\"$country\" title=\"$country\">";
+	$board['img'] = "<img class=\"flag flag-$locale_short\" src=\"".$config['root']."static/blank.gif\" style=\"width:16px;height:11px;\" alt=\"$country\" title=\"$country\">";
 
 	if ($showboard || $admin) {
 		if (!$showboard) {
