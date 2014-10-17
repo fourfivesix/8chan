@@ -8,6 +8,254 @@ body {
   padding-right: 4px;
 }
 
+/*********************
+ * Frontpage begin
+ * *******************/
+/* Responsive helpers */
+
+body.frontpage .col {
+  float: left;
+}
+
+body.frontpage .col-12 { width: 100%; }
+body.frontpage .col-11 { width: 91.66666667%; }
+body.frontpage .col-10 { width: 83.33333333%; }
+body.frontpage .col-9 { width: 75%; }
+body.frontpage .col-8 { width: 66.66666667%; }
+body.frontpage .col-7 { width: 58.33333333%; }
+body.frontpage .col-6 { width: 50%; }
+body.frontpage .col-5 { width: 41.66666667%; }
+body.frontpage .col-4 { width: 33.33333333%; }
+body.frontpage .col-3 { width: 25%; }
+body.frontpage .col-2 { width: 16.66666667%; }
+body.frontpage .col-1 { width: 8.33333333%; }
+
+body.frontpage .left-push {
+  float: left;
+}
+
+body.frontpage .right-push {
+  float: right;
+}
+
+/* Main */
+
+body.frontpage * {
+  box-sizing: border-box;
+}
+
+body.frontpage {
+  background: #EEF2FF;
+  font-family: 'Verdana', 'Arial', 'Helvetica', sans-serif;
+  line-height: 1.4;
+  font-size:12pt;
+}
+
+body.frontpage #main {
+  margin: 0 auto;
+  max-width: 1110px;
+  width: 100%;
+}
+
+body.frontpage h4 {
+  color: #AF0A0F;
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0px;
+}
+
+body.frontpage ul, ol, dl {
+  padding: 0;
+  margin: 0;
+}
+
+body.frontpage a { color: #42413C; }
+body.frontpage a:hover { color: white; }
+body.frontpage a:visited { color: #6E6C64; }
+
+body.frontpage .clear {
+  clear: both;
+}
+
+body.frontpage .mobileDisplay {
+  display: none;
+  width: 100%;
+}
+
+/* Header */
+
+body.frontpage header {
+  background-color: #D6DAF0;
+  border: 1px solid #000;
+  display: inline-block;
+  line-height: 150%;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+body.frontpage .header_text  {
+  margin-top: 55px;
+}
+
+/* Body */
+
+body.frontpage #content {
+  display: inline-block;
+  width: 100%;
+}
+
+body.frontpage .content_menu {
+  background-color: #D6DAF0;
+  border: 1px solid #000;
+  text-align: left;
+  list-style-position: inside;
+  padding: 15px 30px;
+  text-align: left;
+}
+
+body.frontpage .content_menu_head li {
+  list-style: none;
+  border-top: 1px solid #666;
+  margin-bottom: 15px;
+}
+
+body.frontpage .content_menu_head a {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  width: 160px;
+  text-decoration: none;
+}
+
+body.frontpage .content_body {
+  padding: 20px;
+}
+
+body.frontpage iframe {
+  margin-top: 25px;
+  width: 100%;
+  height: 400px;
+}
+
+body.frontpage .button {
+  padding: 13px 18px;
+  border: 2px solid #000;
+  font-size: 2.75em;
+  color: #AF0A0F;
+  text-align: center;
+  display: inline-block;
+  background: #D6DAF0;
+  margin-right: 5px;
+  margin-top: 15px;
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* Footer */
+
+body.frontpage .footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 920px) {
+  body.frontpage #content {
+    margin-top: 10px;
+  }
+
+  body.frontpage .menuCol {
+    width: 100%;
+    float: none;
+  }
+
+  body.frontpage .bodyCol {
+    width: 100%;
+    float: none;
+    margin-top: 20px;
+  }
+
+  body.frontpage .header_logo {
+    float: none;
+    margin: auto;
+    width: 100%;
+  }
+
+  body.frontpage .header_text {
+    float: none;
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  body.frontpage .content_menu_head {
+    width: 45%;
+    float: left;
+  }
+
+  body.frontpage .content_menu_list {
+    width: 45%;
+    float: right;
+  }
+
+  body.frontpage .mobileDisplay {
+    display:inline-block;
+    text-align:center;
+  }
+
+  body.frontpage .mobileHide {
+    display:none;
+  }
+}
+
+@media (max-width: 570px) {
+  body.frontpage .content_menu_head {
+    width: 100%;
+    float: none;
+  }
+
+  body.frontpage .content_menu_list {
+    width: 100%;
+    float: none;
+  }
+
+  body.frontpage .button {
+    font-size: 1.2em;
+  }
+}
+
+/*********************
+ * Boardlist begin
+ * *******************/
+
+table.boardlist th.header {
+    background-image: url(/static/bg.gif); 
+    cursor: pointer; 
+    background-repeat: no-repeat; 
+    background-position: center right; 
+    padding-left: 20px; 
+    margin-left: -1px; 
+}
+table.boardlist th.headerSortUp { 
+    background-image: url(/static/asc.gif); 
+} 
+table.boardlist th.headerSortDown { 
+    background-image: url(/static/desc.gif); 
+} 
+table.boardlist .flag-eo {
+    background-image: url(/static/eo.png);
+}
+table.boardlist .flag-en {
+    background-image: url(/static/en.png);
+}
+
 a,a:visited {
   text-decoration: underline;
   color: #34345C;
