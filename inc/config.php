@@ -1644,3 +1644,6 @@
 		'<a href="$0" target="_blank" class="file">'.
 		'<img style="width:360px;height:270px;" src="//img.youtube.com/vi/$2/0.jpg" class="post-image"/>'.
 		'</a></div>';
+
+	// Support for InstantClick (http://instantclick.io)
+	$config['instantclick'] = false;

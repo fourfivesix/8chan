@@ -407,3 +407,4 @@ EOT;
 	);
 
 $config['gzip_static'] = false;
+$config['instantclick'] = true;

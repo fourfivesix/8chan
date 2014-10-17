@@ -99,5 +99,12 @@
   </div><!--div#main-->
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/update_boards.js"></script>
+{% if config.instantclick %}
+<script data-no-instant src="{{ config.root }}js/instantclick.min.js"></script>
+<script data-no-instant type="text/javascript">{% raw %}
+  InstantClick.init();
+{% endraw %}</script>
+{% endif %}
+
 </body>
 </html>

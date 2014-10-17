@@ -84,7 +84,7 @@
 
 		{% for footer in config.footer %}<p class="unimportant" style="text-align:center;">{{ footer }}</p>{% endfor %}
 	</footer>
-	<script type="text/javascript">{% raw %}
+	<script data-no-instant type="text/javascript">{% raw %}
 		var styles = {
 			{% endraw %}
 			{% for name, uri in config.stylesheets %}{% raw %}'{% endraw %}{{ name|addslashes }}{% raw %}' : '{% endraw %}/stylesheets/{{ uri|addslashes }}{% raw %}',
@@ -92,8 +92,19 @@
 		}; onready(init);
 	{% endraw %}</script>
 
-	<script type="text/javascript">{% raw %}
+	{% if config.instantclick %}
+	<script data-no-instant src="{{ config.root }}js/instantclick.min.js"></script>
+	<script data-no-instant type="text/javascript">{% raw %}
+		InstantClick.on('change', function() {
+			ready();
+		});
+		InstantClick.init();
+	{% endraw %}</script>
+	{% else %}
+	<script data-no-instant type="text/javascript">{% raw %}
 		ready();
 	{% endraw %}</script>
+	{% endif %}
+
 </body>
 </html>

@@ -63,7 +63,7 @@
 		<br><a href="https://int.vichan.net/devel/">vichan</a> Copyright &copy; 2012-2014 vichan-devel</p>
 		{% for footer in config.footer %}<p class="unimportant" style="text-align:center;">{{ footer }}</p>{% endfor %}
 	</footer>
-	<script type="text/javascript">{% raw %}
+	<script data-no-instant type="text/javascript">{% raw %}
 		var styles = {
 			{% endraw %}
 			{% for name, uri in config.stylesheets %}{% raw %}'{% endraw %}{{ name|addslashes }}{% raw %}' : '{% endraw %}/stylesheets/{{ uri|addslashes }}{% raw %}',
@@ -71,8 +71,19 @@
 		}; onready(init);
 	{% endraw %}</script>
 
+	{% if config.instantclick %}
+	<script src="{{ config.root }}js/instantclick.min.js" data-no-instant></script>
+	<script data-no-instant type="text/javascript">{% raw %}
+		InstantClick.on('change', function() {
+			ready();
+		});
+		InstantClick.init();
+	{% endraw %}</script>
+	{% else %}
 	<script type="text/javascript">{% raw %}
 		ready();
 	{% endraw %}</script>
+	{% endif %}
+
 </body>
 </html>
