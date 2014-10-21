@@ -15,9 +15,9 @@
 			var modRoot="{{ config.root }}"+(inMod ? "mod.php?/" : "");
 		</script>
 		{% if not nojavascript %}
-			<script type="text/javascript" src="{{ config.url_javascript }}"></script>
+			<script data-no-instant type="text/javascript" src="{{ config.url_javascript }}"></script>
 			{% if not config.additional_javascript_compile %}
-			{% for javascript in config.additional_javascript %}<script type="text/javascript" src="{{ config.additional_javascript_url }}{{ javascript }}"></script>{% endfor %}
+			{% for javascript in config.additional_javascript %}<script data-no-instant type="text/javascript" src="{{ config.additional_javascript_url }}{{ javascript }}"></script>{% endfor %}
 			{% endif %}
 		{% endif %}
 		{% if config.recaptcha %}<style type="text/css">{% raw %}

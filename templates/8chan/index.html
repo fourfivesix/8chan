@@ -2,8 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script type="text/javascript">
+      var active_page = "frontpage";
+    </script>
     <link rel="stylesheet" media="screen" href="{{ config.url_stylesheet }}">
+    {% if config.default_stylesheet.1 != '' and not mod %}<link rel="stylesheet" type="text/css" id="stylesheet" href="{{ config.uri_stylesheets }}{{ config.default_stylesheet.1 }}">{% endif %}
+    {% if config.font_awesome %}<link rel="stylesheet" media="screen" href="{{ config.root }}{{ config.font_awesome_css }}">{% endif %}
+    {% if config.country_flags_condensed %}<link rel="stylesheet" href="{{ config.root }}{{ config.country_flags_condensed_css }}">{% endif %}
+    {% if config.katex %}<link rel="stylesheet" type="text/css" href="/js/katex/katex.min.css">{% endif %}
+    <script data-no-instant type="text/javascript">
+      var configRoot="{{ config.root }}";
+      var inMod = {% if mod %}true{% else %}false{% endif %};
+      var modRoot="{{ config.root }}"+(inMod ? "mod.php?/" : "");
+    </script>
     <title>∞chan</title>
+    {% if not nojavascript %}
+      <script type="text/javascript" src="{{ config.url_javascript }}"></script>
+      {% if not config.additional_javascript_compile %}
+        {% for javascript in config.additional_javascript %}<script data-no-instant type="text/javascript" src="{{ config.additional_javascript_url }}{{ javascript }}"></script>{% endfor %}
+      {% endif %}
+    {% endif %}
   </head>
 
   <body class="frontpage">
@@ -97,12 +115,14 @@
 	</footer>
 	</div>
   </div><!--div#main-->
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/update_boards.js"></script>
 {% if config.instantclick %}
 <script data-no-instant src="{{ config.root }}js/instantclick.min.js"></script>
 <script data-no-instant type="text/javascript">{% raw %}
+  InstantClick.on('change', function() {
+    ready();
+  });
   InstantClick.init();
+  ready();
 {% endraw %}</script>
 {% endif %}
 
